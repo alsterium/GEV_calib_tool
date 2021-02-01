@@ -546,9 +546,9 @@ void GEV_Drive::Init()
 		/****************
 		*****************/
 		// 構造化束縛により変数を取りだす
-		auto [tmpMap1, tmpMap2] = initMap(intrinsicsFile);
-		map1 = tmpMap1;
-		map2 = tmpMap2;
+		//auto [tmpMap1, tmpMap2] = initMap(intrinsicsFile);
+		//map1 = tmpMap1;
+		//map2 = tmpMap2;
 	}
 	catch (const std::exception& e)
 	{
