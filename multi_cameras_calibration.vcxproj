@@ -126,6 +126,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ccalib.cpp" />
+    <ClCompile Include="multicalib.cpp" />
     <ClCompile Include="multi_cameras_calibration.cpp" />
   </ItemGroup>
   <ItemGroup>
