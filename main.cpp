@@ -55,17 +55,19 @@ int main() {
 			vector<cv::Mat> Frames;
 			// 1フレーム分すべてのカメラから画像を取得する
 			cam >> Frames;
-			ShowAquiredImages(Frames);
 			if (cv::waitKey(1) == 27)lp_break = false;
 			if (cv::waitKey(22) == 'c') {
 				string time = getTimeStamp();
 				for (int i = 0; i < Frames.size(); i++) {
-					string filename ="./image/" + to_string(i) + "-" + time + ".png";
+					string filename = "./image/" + to_string(i) + "-" + time + ".png";
 					filenames.push_back(filename);
 					cv::imwrite(filename, Frames[i]);
 					cout << "saving: " << filename << endl;
 				}
 			}
+			for (int i = 0; i < Frames.size(); i++)
+				cv::resize(Frames[i], Frames[i], cv::Size(320, 240));
+			ShowAquiredImages(Frames);
 		}
 		cv::FileStorage fs("imagelist.xml", cv::FileStorage::WRITE);
 		fs << "images" << "[";
