@@ -69,7 +69,7 @@ int main() {
 				cv::resize(Frames[i], Frames[i], cv::Size(320, 240));
 			ShowAquiredImages(Frames);
 		}
-		cv::FileStorage fs("imagelist.xml", cv::FileStorage::WRITE);
+		cv::FileStorage fs("imagelist"+getTimeStamp()+".xml", cv::FileStorage::WRITE);
 		fs << "images" << "[";
 		fs << "./pattern.png";
 		for (int i = 0; i < filenames.size(); i++) {
